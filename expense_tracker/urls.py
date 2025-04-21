@@ -3,7 +3,7 @@ from . import views
 from .views import ExpenseListView, ExpenseCreateView, ExpenseUpdateView, ExpenseDeleteView
 
 urlpatterns = [
-    path('', views.home, name='home'), 
+    path('home/', views.home, name='home'), 
     path('about/', views.about, name='about'),
     path('', ExpenseListView.as_view(), name='expense-list'),
     path('create/', ExpenseCreateView.as_view(), name='expense-create'),
