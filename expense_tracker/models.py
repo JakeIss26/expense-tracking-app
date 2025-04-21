@@ -13,3 +13,6 @@ class Expense(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     date = models.DateField()
+
+    def __str__(self):
+        return f"{self.id}. {self.name} ({self.category}) — {self.amount}₽ on date {self.date}"
