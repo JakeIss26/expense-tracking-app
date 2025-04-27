@@ -8,9 +8,10 @@
     <li class="list-group-item d-flex justify-content-between">
         <div>
             <strong>{{ expense.name }}</strong><br>
-            {{ expense.amount }}
-            {{ expense.category }}
-            {{ expense.date }}
+            Cost: {{ expense.amount }},
+            ({{ expense.category }}),
+            {{ expense.date }},
+            Type: {{ expense.type }}
         </div>
         <div>
             <a href="{% url 'expense-update' expense.pk %}" class="btn btn-warning btn-sm">Edit</a>

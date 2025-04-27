@@ -7,29 +7,31 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from .forms import RegisterForm, UpdateProfileForm
+from rest_framework import viewsets
+from .serializers import ExpenseSerializer
 
 
-@login_required
+class ExpenseViewSet(viewsets.ModelViewSet):
+    queryset = Expense.objects.all() 
+    serializer_class = ExpenseSerializer
+
 class ExpenseListView(ListView):
     model = Expense
     template_name = 'expense_list.html'
     context_object_name = 'expenses'
 
-@login_required
 class ExpenseCreateView(CreateView):
     model = Expense
     form_class = ExpenseForm
     template_name = 'expense_form.html'
     success_url = reverse_lazy('expense-list')
 
-@login_required
 class ExpenseUpdateView(UpdateView):
     model = Expense
     form_class = ExpenseForm
     template_name = 'expense_form.html'
     success_url = reverse_lazy('expense-list')
 
-@login_required
 class ExpenseDeleteView(DeleteView):
     model = Expense
     template_name = 'expense_confirm_delete.html'

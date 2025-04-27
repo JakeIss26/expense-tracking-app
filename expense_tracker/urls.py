@@ -1,9 +1,15 @@
-from django.urls import path 
+from django.urls import path, include
 from . import views
 from .views import ExpenseListView, ExpenseCreateView, ExpenseUpdateView, ExpenseDeleteView, register, profile, edit_profile
 from django.contrib.auth.views import LoginView, LogoutView
+from rest_framework.routers import DefaultRouter 
+from .views import ExpenseViewSet
+
+router = DefaultRouter() 
+router.register(r'expenses', ExpenseViewSet)
 
 urlpatterns = [
+    path('api/', include(router.urls)),
     path('home/', views.home, name='home'), 
     path('about/', views.about, name='about'),
     path('', ExpenseListView.as_view(), name='expense-list'),
