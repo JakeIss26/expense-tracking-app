@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'expense_tracker'
 ]
 
+INSTALLED_APPS += ['channels']
+ASGI_APPLICATION = 'expense_tracking_app.asgi.application'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -130,3 +133,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # пример для Redis
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # если ты используешь Redis для хранения результатов
+
+# Настройки отправки почты через Gmail
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Адрес сервера Gmail
+EMAIL_PORT = 587  # Порт для TLS
+EMAIL_USE_TLS = True  # Включаем TLS для безопасного соединения
+EMAIL_HOST_USER = 'your_email@gmail.com'  # Твоя почта на Gmail
+EMAIL_HOST_PASSWORD = 'your_email_password'  # Пароль от почты
