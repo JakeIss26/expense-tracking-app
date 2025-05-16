@@ -1,6 +1,6 @@
 from django.urls import path, include
 from . import views
-from .views import ExpenseListView, ExpenseCreateView, ExpenseUpdateView, ExpenseDeleteView, register, profile, edit_profile
+from .views import ExpenseListView, ExpenseCreateView, ExpenseUpdateView, ExpenseDeleteView, register, profile, edit_profile, StatsView
 from django.contrib.auth.views import LoginView, LogoutView
 from rest_framework.routers import DefaultRouter 
 from .views import ExpenseViewSet
@@ -21,4 +21,5 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('profile/', profile, name='profile'),
     path('profile/edit/', edit_profile, name='edit-profile'),
+    path('stats/', StatsView.as_view(), name='stats'),
 ]

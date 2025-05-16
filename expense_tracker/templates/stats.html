@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="text-center mb-4">Analytics Charts</h2>
+
+<div id="chart-tooltip" style="position: absolute; pointer-events: none; background: #333; color: #fff; padding: 6px 10px; border-radius: 4px; font-size: 14px; display: none;"></div>
+
+<div class="d-flex flex-wrap justify-content-center gap-4">
+    <!-- Доходы vs Расходы -->
+    <div style="width: 400px; height: 400px;">
+        <canvas id="mainChart"></canvas>
+    </div>
+
+    <!-- Доходы по категориям -->
+    <div style="width: 400px; height: 400px;">
+        <canvas id="incomeCategoryChart"></canvas>
+    </div>
+
+    <!-- Расходы по категориям -->
+    <div style="width: 400px; height: 400px;">
+        <canvas id="categoryChart"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+    // ==== ГЛАВНАЯ ДИАГРАММА ====
+    const incomeAmount = {{ income_total|default:0 }};
+    const expenseAmount = {{ expense_total|default:0 }};
+    const fullTotal = incomeAmount + expenseAmount || 1;
+
+    const ctxMain = document.getElementById('mainChart').getContext('2d');
+    new Chart(ctxMain, {
+        type: 'doughnut',
+        data: {
+            labels: ['Income', 'Expense'],
+            datasets: [{
+                data: [
+                    {{ income_percent|default:0|floatformat:"2" }},
+                    {{ expense_percent|default:0|floatformat:"2" }}
+                ],
+                backgroundColor: ['#4caf50', '#f44336'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            interaction: {
+                mode: 'nearest',
+                intersect: true
+            },
+            plugins: {
+                legend: { position: 'right' },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label;
+                            const value = label === 'Income' ? incomeAmount : expenseAmount;
+                            const percent = ((value / fullTotal) * 100).toFixed(1);
+                            return `${label}: ${value}₸ (${percent}%)`;
+                        }
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Incomes and Expenses',
+                }
+            }
+        }
+    });
+
+    // ==== ДОХОДЫ ПО КАТЕГОРИЯМ ====
+    const incomeCategoryLabels = {{ income_cat_labels|safe }};
+    const incomeCategoryValues = {{ income_cat_values|safe }};
+    const totalIncomeCategory = incomeCategoryValues.length ? incomeCategoryValues.reduce((a, b) => a + b, 0) : 1;
+
+    const ctxIncome = document.getElementById('incomeCategoryChart').getContext('2d');
+    new Chart(ctxIncome, {
+        type: 'pie',
+        data: {
+            labels: incomeCategoryLabels,
+            datasets: [{
+                data: incomeCategoryValues,
+                backgroundColor: incomeCategoryLabels.map(() =>
+                    '#' + Math.floor(Math.random() * 16777215).toString(16)
+                )
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'right' },
+                title: {
+                    display: true,
+                    text: 'Incomes by Category'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label;
+                            const value = context.parsed || 0;
+                            const percent = ((value / totalIncomeCategory) * 100).toFixed(1);
+                            return `${label}: ${value}₸ (${percent}%)`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // ==== РАСХОДЫ ПО КАТЕГОРИЯМ ====
+    const categoryLabels = {{ category_labels|safe }};
+    const categoryValues = {{ category_values|safe }};
+    const totalExpenses = categoryValues.length ? categoryValues.reduce((a, b) => a + b, 0) : 1;
+
+    const ctxExpense = document.getElementById('categoryChart').getContext('2d');
+    new Chart(ctxExpense, {
+        type: 'pie',
+        data: {
+            labels: categoryLabels,
+            datasets: [{
+                data: categoryValues,
+                backgroundColor: categoryLabels.map(() =>
+                    '#' + Math.floor(Math.random() * 16777215).toString(16)
+                )
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'right' },
+                title: {
+                    display: true,
+                    text: 'Expenses by Category'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.parsed || 0;
+                            const percent = ((value / totalExpenses) * 100).toFixed(1);
+                            return `${label}: ${value}₸ (${percent}%)`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}
