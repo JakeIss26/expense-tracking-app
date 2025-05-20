@@ -115,6 +115,13 @@ body {
   margin-bottom: 5px;
 }
 
+.income_name {
+  color: #198754;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
 .expense_category {
   display: block;
   padding: 2px 0px;

@@ -4,18 +4,21 @@ from django.contrib.auth.models import User
 from ..models import Category, Expense
 from datetime import date
 
+
 class ExpenseViewTests(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='pass12345')
         self.client = Client()
+        self.user = User.objects.create_user(username='testuser', password='pass12345')
         self.client.login(username='testuser', password='pass12345')
+
         self.cat = Category.objects.create(name='Food')
         self.expense = Expense.objects.create(
             name='Lunch',
             amount=100,
             category=self.cat,
             date=date.today(),
-            type='expense'
+            type='expense',
+            user=self.user  # ДОБАВЬ ЭТО!
         )
 
     def test_expense_list_view(self):
@@ -37,7 +40,7 @@ class ExpenseViewTests(TestCase):
         }
         resp = self.client.post(reverse('expense-create'), data, follow=True)
         self.assertEqual(resp.status_code, 200)
-        self.assertTrue(Expense.objects.filter(name='Dinner').exists())
+        self.assertTrue(Expense.objects.filter(name='Dinner', user=self.user).exists())
 
     def test_expense_update_view(self):
         url = reverse('expense-update', args=[self.expense.id])

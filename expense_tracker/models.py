@@ -17,6 +17,7 @@ class Expense(models.Model):
         (EXPENSE, 'Expense'),
     ]
 
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
@@ -24,4 +25,4 @@ class Expense(models.Model):
     type = models.CharField(max_length=7, choices=TYPE_CHOICES, blank=False)
 
     def __str__(self):
-        return f"{self.id}. {self.name} ({self.category}) — {self.amount}₽ on date {self.date} - Type: {self.get_type_display()}"
+        return f"{self.id}. {self.name} ({self.category}) — {self.amount}т on date {self.date} - Type: {self.get_type_display()}"
