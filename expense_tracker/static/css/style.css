@@ -1,0 +1,137 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container-fluid {
+  padding-left: 165px;
+  padding-right: 165px;
+}
+
+.navbar {
+  height: 70px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 1;
+  -webkit-box-shadow: 0px 5px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-right: 20px;
+}
+
+.navbar-nav {
+  margin-left: 10px;
+  flex-direction: row;
+}
+
+.nav-item {
+  margin-right: 15px;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.logout-btn {
+  font-weight: bold;
+  border-radius: 8px;
+  border: 2px solid #ec2424;
+  padding: 4px 10px;
+  margin-left: 10px;
+  transition: border 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #ec2424;
+  color: #ffffff;
+}
+
+
+/* expense list*/
+
+.heading {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.expense_type {
+  background-color: #ffffff;
+  border-bottom: 3px solid #ec2424;
+  border-radius: 10px 10px 0px 0px;
+  margin-bottom: 10px;
+}
+
+.income_type {
+  background-color: #ffffff;
+  border-bottom: 3px solid #198754;
+  border-radius: 10px 10px 0px 0px;
+  margin-bottom: 10px;
+}
+
+.edit_btn {
+  background-color: #ffffff;
+  border: #f2b32a solid 2px;
+  border-radius: 5px;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.edit_btn:hover {
+  background-color: #f2b32a;
+  color: #ffffff;
+}
+
+.delete_btn {
+  background-color: #ffffff;
+  border: #ec2424 solid 2px;
+  border-radius: 5px;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.delete_btn:hover {
+  background-color: #ec2424;
+  color: #ffffff;
+}
+
+.expense_name {
+  color: #ec2424;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.expense_category {
+  display: block;
+  padding: 2px 0px;
+  border-radius: 5px;
+}
+
+/*profile*/
+
+.edit-profile-btn {
+  font-weight: bold;
+  border-radius: 8px;
+  border: 2px solid #f2b32a;
+  padding: 4px 10px;
+  transition: border 0.3s ease;
+}
+
+.edit-profile-btn:hover {
+  background-color: #f2b32a;
+  color: #ffffff;
+}

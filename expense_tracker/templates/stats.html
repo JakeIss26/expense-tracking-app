@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
 
-<h2 class="text-center mb-4">Analytics Charts</h2>
+<h2 class="text-left mb-4">Analytics Charts</h2>
 
 <div id="chart-tooltip" style="position: absolute; pointer-events: none; background: #333; color: #fff; padding: 6px 10px; border-radius: 4px; font-size: 14px; display: none;"></div>
 
@@ -50,7 +52,16 @@
                 intersect: true
             },
             plugins: {
-                legend: { position: 'right' },
+                legend: { 
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 50,
+                        boxHeight: 15,
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
                 tooltip: {
                     callbacks: {
                         label: function(context) {
@@ -64,6 +75,9 @@
                 title: {
                     display: true,
                     text: 'Incomes and Expenses',
+                    font: {
+                        size: 20
+                    }
                 }
             }
         }
@@ -89,10 +103,22 @@
         options: {
             responsive: true,
             plugins: {
-                legend: { position: 'right' },
+                legend: { 
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 50,
+                        boxHeight: 15,
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
                 title: {
                     display: true,
-                    text: 'Incomes by Category'
+                    text: 'Incomes by Category',
+                    font: {
+                        size: 20
+                    }
                 },
                 tooltip: {
                     callbacks: {
@@ -128,10 +154,22 @@
         options: {
             responsive: true,
             plugins: {
-                legend: { position: 'right' },
+                legend: { 
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 50,
+                        boxHeight: 15,
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
                 title: {
                     display: true,
-                    text: 'Expenses by Category'
+                    text: 'Expenses by Category',
+                    font: {
+                        size: 20
+                    }
                 },
                 tooltip: {
                     callbacks: {

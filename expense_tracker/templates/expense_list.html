@@ -1,21 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<h2>Expenses List</h2>
-<a href="{% url 'expense-create' %}" class="btn btn-primary mb-3">Add Expense</a>
+<h2 class="heading">Expenses List</h2>
+<a href="{% url 'expense-create' %}" class="btn btn-success mb-3"><i class="fas fa-plus" style="color: white; font-size: 16px;"></i> Add Expense</a>
 <ul class="list-group">
     {% for expense in expenses %}
-    <li class="list-group-item d-flex justify-content-between">
+    <li class="list-group-item d-flex justify-content-between expense_type">
         <div>
-            <strong>{{ expense.name }}</strong><br>
-            Cost: {{ expense.amount }},
-            ({{ expense.category }}),
-            {{ expense.date }},
+            <span class="expense_name">{{ expense.name }}</span>
+            <span style="display: block;">Cost: {{ expense.amount }}</span>
+            <span class="expense_category">{{ expense.category }}</span>
+            {{ expense.date }}
             Type: {{ expense.type }}
         </div>
-        <div>
-            <a href="{% url 'expense-update' expense.pk %}" class="btn btn-warning btn-sm">Edit</a>
-            <a href="{% url 'expense-delete' expense.pk %}" class="btn btn-danger btn-sm">Delete</a>
+        <div class="d-flex gap-2 align-items-center">
+            <a href="{% url 'expense-update' expense.pk %}" class="btn edit_btn"><i class="fas fa-pencil-alt" style="font-size: 16px;"></i></a>
+            <a href="{% url 'expense-delete' expense.pk %}" class="btn delete_btn"><i class="fas fa-trash" style="font-size: 16px;"></i></a>
         </div>
     </li>
     {% endfor %}

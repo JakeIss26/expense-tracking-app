@@ -10,7 +10,6 @@ router.register(r'expenses', ExpenseViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
-    path('home/', views.home, name='home'), 
     path('about/', views.about, name='about'),
     path('', ExpenseListView.as_view(), name='expense-list'),
     path('create/', ExpenseCreateView.as_view(), name='expense-create'),

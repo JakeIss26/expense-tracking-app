@@ -37,11 +37,6 @@ class ExpenseDeleteView(DeleteView):
     model = Expense
     template_name = 'expense_confirm_delete.html'
     success_url = reverse_lazy('expense-list')
-
-@login_required
-def home(request):
-    data = Expense.objects.all()
-    return render(request, 'home.html', {'data': data})
     
 def about(request):
     return render(request, 'about.html')

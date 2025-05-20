@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
-<h2>User Profile</h2>
-<p>Name: {{ user.username }}</p>
-<p>Email: {{ user.email }}</p>
-<a href="{% url 'edit-profile' %}" class="btn btn-warning">Edit Profile</a>
-<a href="{% url 'logout' %}" class="btn btn-danger">Log Out</a>
+<h2 style="font-weight: 600;">User Profile</h2>
+<p><span style="font-size: 18px;font-weight: 600;">Name:</span> {{ user.username }}</p>
+<p><span style="font-size: 18px;font-weight: 600;">Email:</span> {{ user.email }}</p>
+<a href="{% url 'edit-profile' %}" class="btn edit-profile-btn">Edit Profile</a>
+<a href="{% url 'logout' %}" class="btn logout-btn">Log Out</a>
 {% endblock %}
