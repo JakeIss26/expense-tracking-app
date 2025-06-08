@@ -1,0 +1,167 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Expense Tracker 1.0\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Expense Tracker"
+msgstr "Expense Tracker"
+
+msgid "About"
+msgstr "About"
+
+msgid "Expenses"
+msgstr "Expenses"
+
+msgid "Stats"
+msgstr "Stats"
+
+msgid "Profile"
+msgstr "Profile"
+
+msgid "Logout"
+msgstr "Logout"
+
+msgid "Edit Profile"
+msgstr "Edit Profile"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Confirm Delete"
+msgstr "Confirm Delete"
+
+msgid "Are you sure you want to delete \"%(object)s\"?"
+msgstr "Are you sure you want to delete \"%(object)s\"?"
+
+msgid "Yes, Delete"
+msgstr "Yes, Delete"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Back"
+msgstr "Back"
+
+msgid "Expenses List"
+msgstr "Expenses List"
+
+msgid "Add Expense or Income"
+msgstr "Add Expense or Income"
+
+msgid "No expenses found."
+msgstr "No expenses found."
+
+msgid "Please"
+msgstr "Please"
+
+msgid "log in"
+msgstr "log in"
+
+msgid "to view your expenses."
+msgstr "to view your expenses."
+
+msgid "Log in"
+msgstr "Log in"
+
+msgid ""
+"\n"
+"      If you don't have an account, you can <a "
+"href=\"%(register_url)s\">register here</a>.\n"
+"    "
+msgstr ""
+"\n"
+"      If you don't have an account, you can <a "
+"href=\"%(register_url)s\">register here</a>.\n"
+"    "
+
+msgid "User Profile"
+msgstr "User Profile"
+
+msgid "Log Out"
+msgstr "Log Out"
+
+msgid "Registration"
+msgstr "Registration"
+
+msgid "Register"
+msgstr "Register"
+
+msgid "Analytics Charts"
+msgstr "Analytics Charts"
+
+msgid "Sending welcome email to: %(email)s"
+msgstr "Sending welcome email to: %(email)s"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Amount"
+msgstr "Amount"
+
+msgid "Category"
+msgstr "Category"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Username"
+msgstr "Username"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Confirm Password"
+msgstr "Confirm Password"
+
+msgid "Category Name"
+msgstr "Category Name"
+
+msgid "Income"
+msgstr "Income"
+
+msgid "Expense"
+msgstr "Expense"
+
+msgid "User"
+msgstr "User"
+
+msgid "Expense Tracking app"
+msgstr "Expense Tracking app"
+
+msgid ""
+"Expense Tracker is a simple and intuitive web application that helps you "
+"take control of your personal finances. With this tool, you can:"
+msgstr ""
+"Expense Tracker is a simple and intuitive web application that helps you "
+"take control of your personal finances. With this tool, you can:"
+
+msgid "Log and categorize your daily expenses"
+msgstr "Log and categorize your daily expenses"
+
+msgid "Visualize your spending habits with clear statistics"
+msgstr "Visualize your spending habits with clear statistics"
+
+msgid ""
+"Whether you're saving for something special or just trying to understand "
+"where your money goes, Expense Tracker makes it easy to stay organized and "
+"mindful of your budget."
+msgstr ""
+"Whether you're saving for something special or just trying to understand "
+"where your money goes, Expense Tracker makes it easy to stay organized and "
+"mindful of your budget."
+
+msgid ""
+"This project was created as a learning exercise using Django, Bootstrap, and "
+"modern design principles to provide both functionality and a pleasant user "
+"experience."
+msgstr ""
+"This project was created as a learning exercise using Django, Bootstrap, and "
+"modern design principles to provide both functionality and a pleasant user "
+"experience."

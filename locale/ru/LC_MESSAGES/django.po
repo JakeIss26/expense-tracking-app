@@ -1,0 +1,170 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Expense Tracker 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-08 23:18+0500\n"
+"PO-Revision-Date: 2025-06-08 23:50+0500\n"
+"Last-Translator: Yakov <yakov@example.com>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Expense Tracker"
+msgstr "Трекер расходов"
+
+msgid "About"
+msgstr "О проекте"
+
+msgid "Expenses"
+msgstr "Расходы"
+
+msgid "Stats"
+msgstr "Статистика"
+
+msgid "Profile"
+msgstr "Профиль"
+
+msgid "Logout"
+msgstr "Выйти"
+
+msgid "Edit Profile"
+msgstr "Редактировать профиль"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Confirm Delete"
+msgstr "Подтвердите удаление"
+
+msgid "Are you sure you want to delete \"%(object)s\"?"
+msgstr "Вы уверены, что хотите удалить «%(object)s»?"
+
+msgid "Yes, Delete"
+msgstr "Да, удалить"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Expenses List"
+msgstr "Список расходов"
+
+msgid "Add Expense or Income"
+msgstr "Добавить расход или доход"
+
+msgid "No expenses found."
+msgstr "Расходы не найдены."
+
+msgid "Please"
+msgstr "Пожалуйста"
+
+msgid "log in"
+msgstr "войдите"
+
+msgid "to view your expenses."
+msgstr "чтобы просмотреть свои расходы."
+
+msgid "Log in"
+msgstr "Войти"
+
+msgid ""
+"\n"
+"      If you don't have an account, you can <a "
+"href=\"%(register_url)s\">register here</a>.\n"
+"    "
+msgstr ""
+"\n"
+"      Если у вас нет аккаунта, вы можете <a "
+"href=\"%(register_url)s\">зарегистрироваться здесь</a>.\n"
+"    "
+
+msgid "User Profile"
+msgstr "Профиль пользователя"
+
+msgid "Log Out"
+msgstr "Выйти"
+
+msgid "Registration"
+msgstr "Регистрация"
+
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+msgid "Analytics Charts"
+msgstr "Аналитические диаграммы"
+
+msgid "Sending welcome email to: %(email)s"
+msgstr "Отправка приветственного письма на: %(email)s"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Amount"
+msgstr "Сумма"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Email"
+msgstr "Электронная почта"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Confirm Password"
+msgstr "Подтвердите пароль"
+
+msgid "Category Name"
+msgstr "Название категории"
+
+msgid "Income"
+msgstr "Доход"
+
+msgid "Expense"
+msgstr "Расход"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "Expense Tracking app"
+msgstr "Приложение для отслеживания расходов"
+
+msgid ""
+"Expense Tracker is a simple and intuitive web application that helps you "
+"take control of your personal finances. With this tool, you can:"
+msgstr ""
+"Expense Tracker — это простое и интуитивно понятное веб-приложение, которое помогает контролировать личные финансы. С его помощью вы можете:"
+
+msgid "Log and categorize your daily expenses"
+msgstr "Записывать и классифицировать ежедневные расходы"
+
+msgid "Visualize your spending habits with clear statistics"
+msgstr "Визуализировать ваши траты с помощью наглядной статистики"
+
+msgid ""
+"Whether you're saving for something special or just trying to understand "
+"where your money goes, Expense Tracker makes it easy to stay organized and "
+"mindful of your budget."
+msgstr ""
+"Независимо от того, копите ли вы на что-то особенное или просто хотите понять, куда уходят деньги, Expense Tracker поможет оставаться организованным и осознанно относиться к бюджету."
+
+msgid ""
+"This project was created as a learning exercise using Django, Bootstrap, and "
+"modern design principles to provide both functionality and a pleasant user "
+"experience."
+msgstr ""
+"Этот проект был создан в учебных целях с использованием Django, Bootstrap и современных принципов дизайна, чтобы обеспечить функциональность и удобство использования."

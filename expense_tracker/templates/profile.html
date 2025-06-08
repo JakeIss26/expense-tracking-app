@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block content %}
-<h2 style="font-weight: 600;">User Profile</h2>
-<p><span style="font-size: 18px;font-weight: 600;">Name:</span> {{ user.username }}</p>
-<p><span style="font-size: 18px;font-weight: 600;">Email:</span> {{ user.email }}</p>
-<a href="{% url 'edit-profile' %}" class="btn edit-profile-btn">Edit Profile</a>
-<a href="{% url 'logout' %}" class="btn logout-btn">Log Out</a>
+<h2 style="font-weight: 600;">{% trans "User Profile" %}</h2>
+<p><span style="font-size: 18px; font-weight: 600;">{% trans "Name" %}:</span> {{ user.username }}</p>
+<p><span style="font-size: 18px; font-weight: 600;">{% trans "Email" %}:</span> {{ user.email }}</p>
+<a href="{% url 'edit-profile' %}" class="btn edit-profile-btn">{% trans "Edit Profile" %}</a>
+<a href="{% url 'logout' %}" class="btn logout-btn">{% trans "Log Out" %}</a>
 {% endblock %}

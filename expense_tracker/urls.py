@@ -4,6 +4,7 @@ from .views import ExpenseListView, ExpenseCreateView, ExpenseUpdateView, Expens
 from django.contrib.auth.views import LoginView, LogoutView
 from rest_framework.routers import DefaultRouter 
 from .views import ExpenseViewSet
+from django.conf.urls.i18n import set_language
 
 router = DefaultRouter() 
 router.register(r'expenses', ExpenseViewSet)
@@ -21,4 +22,5 @@ urlpatterns = [
     path('profile/', profile, name='profile'),
     path('profile/edit/', edit_profile, name='edit-profile'),
     path('stats/', StatsView.as_view(), name='stats'),
+    path('i18n/setlang/', set_language, name='set_language'),
 ]

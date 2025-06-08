@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block content %}
-    <h1>Expense Tracking app</h1>
-    <p>Expense Tracker is a simple and intuitive web application that helps you take control of your personal finances. With this tool, you can:</p>
+    <h1>{% trans "Expense Tracking app" %}</h1>
+    <p>{% trans "Expense Tracker is a simple and intuitive web application that helps you take control of your personal finances. With this tool, you can:" %}</p>
     <ul>
-        <li>💸 Log and categorize your daily expenses</li>
-        <li>📊 Visualize your spending habits with clear statistics</li>
+        <li>💸 {% trans "Log and categorize your daily expenses" %}</li>
+        <li>📊 {% trans "Visualize your spending habits with clear statistics" %}</li>
     </ul>
-    <p>Whether you're saving for something special or just trying to understand where your money goes, Expense Tracker makes it easy to stay organized and mindful of your budget.</p>
-    <p>This project was created as a learning exercise using Django, Bootstrap, and modern design principles to provide both functionality and a pleasant user experience.</p>
+    <p>{% trans "Whether you're saving for something special or just trying to understand where your money goes, Expense Tracker makes it easy to stay organized and mindful of your budget." %}</p>
+    <p>{% trans "This project was created as a learning exercise using Django, Bootstrap, and modern design principles to provide both functionality and a pleasant user experience." %}</p>
 {% endblock %}

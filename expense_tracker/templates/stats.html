@@ -1,24 +1,25 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block content %}
 
-<h2 class="text-left mb-4">Analytics Charts</h2>
+<h2 class="text-left mb-4">{% trans "Analytics Charts" %}</h2>
 
 <div id="chart-tooltip" style="position: absolute; pointer-events: none; background: #333; color: #fff; padding: 6px 10px; border-radius: 4px; font-size: 14px; display: none;"></div>
 
 <div class="d-flex flex-wrap justify-content-center gap-4">
-    <!-- Доходы vs Расходы -->
+    <!-- Income vs Expenses -->
     <div style="width: 400px; height: 400px;">
         <canvas id="mainChart"></canvas>
     </div>
 
-    <!-- Доходы по категориям -->
+    <!-- Income by Category -->
     <div style="width: 400px; height: 400px;">
         <canvas id="incomeCategoryChart"></canvas>
     </div>
 
-    <!-- Расходы по категориям -->
+    <!-- Expenses by Category -->
     <div style="width: 400px; height: 400px;">
         <canvas id="categoryChart"></canvas>
     </div>

@@ -14,6 +14,7 @@ from .serializers import ExpenseSerializer
 from .tasks import send_welcome_email
 from django.views import View
 from django.db.models import Sum
+from django.utils.translation import gettext_lazy as _
 
 
 class ExpenseViewSet(viewsets.ModelViewSet):
@@ -64,7 +65,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            print(f"Sending welcome email to: {user.email}")
+            print(_("Sending welcome email to: %(email)s") % {'email': user.email})
             send_welcome_email.apply_async(args=[user.email])
             return redirect('expense-list')
     else:
