@@ -5,7 +5,7 @@
 {% block content %}
 <h2 class="heading">
   {% with edit="Edit Expense" create="Create Expense" %}
-    {{ view.object.pk|yesno:edit|add:','|add:create }}
+    {{ view.object.pk|yesno:edit|add:''|add:create }}
   {% endwith %}
 </h2>
 <form method="post">

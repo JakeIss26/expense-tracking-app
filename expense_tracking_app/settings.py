@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'expense_tracker'
+    'expense_tracker',
 ]
 
 INSTALLED_APPS += ['channels']
@@ -117,6 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
 
+
 LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
@@ -134,6 +136,7 @@ LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
 
+MODELTRANSLATION_AUTO_POPULATE = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/

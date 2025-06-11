@@ -24,7 +24,7 @@
                 </span> - {{ expense.amount }} тг
                 <span class="expense_category">{% trans "Category" %}: {{ expense.category }}</span>
                 {{ expense.date }}
-                {% trans "Type" %}: {{ expense.type }}
+                {% trans "Type" %}: {{ expense.get_type_display  }}
             </div>
             <div class="d-flex gap-2 align-items-center">
                 <a href="{% url 'expense-update' expense.pk %}" class="btn edit_btn">
