@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u$ma)lmy@(0%ef1+i_6@v7jgfq*2ei4_(1o58^968*xnc2to(r'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.onrender.com']
 
 
 # Application definition
@@ -47,6 +48,7 @@ ASGI_APPLICATION = 'expense_tracking_app.asgi.application'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -160,3 +162,7 @@ EMAIL_PORT = 587  # Порт для TLS
 EMAIL_USE_TLS = True  # Включаем TLS для безопасного соединения
 EMAIL_HOST_USER = 'your_email@gmail.com'  # Твоя почта на Gmail
 EMAIL_HOST_PASSWORD = 'your_email_password'  # Пароль от почты
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

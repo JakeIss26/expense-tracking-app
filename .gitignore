@@ -1,0 +1,19 @@
+# Не пушим секреты
+.env
+
+# Виртуальное окружение
+venv/
+
+# Python кэш
+__pycache__/
+*.py[cod]
+
+# Сборка и логи
+*.log
+*.sqlite3
+
+# Django статика
+staticfiles/
+
+# VSCode настройки
+.vscode/
