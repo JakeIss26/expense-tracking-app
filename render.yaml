@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: expense_tracking_app
+    name: expense_tracking_app_deploy
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
